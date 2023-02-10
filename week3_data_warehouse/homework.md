@@ -1,7 +1,6 @@
 ## Homework
-[Form](https://forms.gle/ytzVYUh2RptgkvF79)  
-We will use all the knowledge learned in this week. Please answer your questions via form above.  
-**Deadline** for the homework is 14th Feb 2022 17:00 CET.
+For this week, I pulled the data from GCS to BigQuery using dbt. I also used dbt to create two persisted tables to analyze the data (one standard and one with partitioning and clustering). The DBT project repo can be found here: 
+https://github.com/PWSampanis/zoomcamp_dbt_2023_parker
 
 ### Question 1: 
 **What is count for fhv vehicles data for year 2019**  
