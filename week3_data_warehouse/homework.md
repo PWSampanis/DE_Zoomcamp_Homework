@@ -12,6 +12,7 @@ What is the count for fhv vehicle records for year 2019?
 - 43,244,696
 - 22,978,333
 - 13,942,414
+
 Answer: 43,244,696
 - I would normally run a count (*) from table but the table's details tab shows the number of rows
 
@@ -25,7 +26,7 @@ What is the estimated amount of data that will be read when this query is execut
 - 0 MB for the External Table and 0MB for the BQ Table
 - 0 MB for the External Table and 317.94MB for the BQ Table 
 
-0 MB for external table, 317.94 MB for BQ table (SELECT count(distinct (Affiliated_base_number)) FROM `zoomcamp-2023.dbt_psampanis.dbt_taxis_persisted`)
+Answer: 0 MB for external table, 317.94 MB for BQ table (SELECT count(distinct (Affiliated_base_number)) FROM `zoomcamp-2023.dbt_psampanis.dbt_taxis_persisted`)
 
 
 
@@ -35,6 +36,7 @@ How many records have both a blank (null) PUlocationID and DOlocationID in the e
 - 1,215,687
 - 5
 - 20,332
+
 Answer: 717748. SELECT count(*) FROM `zoomcamp-2023.dbt_psampanis.dbt_taxis_persisted` 
 where  PUlocationID is null and DOlocationID is null
 
@@ -75,7 +77,8 @@ Where is the data stored in the External Table you created?
 - GCP Bucket
 - Container Registry
 - Big Table
-Answer: The data is stored in Cloud storage. When we query the external table in BigQuery, BigQuery is sending an api call to Storage to pull over the data and temporarily persist it.
+
+Answer: The data is stored in the Cloud Storage bucket. When we query the external table in BigQuery, BigQuery is sending an api call to Storage to pull over the data and temporarily persist it.
 
 ## Question 7:
 It is best practice in Big Query to always cluster your data:
@@ -83,13 +86,6 @@ It is best practice in Big Query to always cluster your data:
 - False
 
 Answer: False, clustering can cause some issues. I've had work pipelines break due to clustering (I can't recall if the issue was with BigQuery Data Transfers or Scheduled Queries). In addition, clustering doesn't really provide benefit for data under 1 GB in size and you cannot accurately estimate query costs on a clustered table. 
-
-
-## (Not required) Question 8:
-A better format to store these files may be parquet. Create a data pipeline to download the gzip files and convert them into parquet. Upload the files to your GCP Bucket and create an External and BQ Table. 
-
-
-Note: Column types for all files used in an External Table must have the same datatype. While an External Table may be created and shown in the side panel in Big Query, this will need to be validated by running a count query on the External Table to check if any errors occur. 
  
 ## Submitting the solutions
 
@@ -97,8 +93,3 @@ Note: Column types for all files used in an External Table must have the same da
 * You can submit your homework multiple times. In this case, only the last submission will be used. 
 
 Deadline: 13 February (Monday), 22:00 CET
-
-
-## Solution
-
-We will publish the solution here
